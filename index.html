@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUXIN LEARN - CBT Portal</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="yux.png">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-container">
+  <div class="login-box">
+    <div class="brand-login">
+      <div class="logo-big"><img src="yux.png" alt="YUXIN Logo" class="logo-big"></div>
+      <h1>YUXIN LEARN CBT</h1>
+      <p>Enter your Exam Registration Number to begin</p>
+    </div>
+    <form id="loginForm">
+      <label>Exam Registration Number</label>
+      <input type="text" id="regNumber" placeholder="e.g. YUX/2026/001" required>
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter password" required>
+      <button type="submit" class="btn-primary full">Login</button>
+    </form>
+    <p id="loginError" class="error"></p>
+  </div>
+</div>
+
+<!-- INSTRUCTION SCREEN -->
+<div id="instructionScreen" class="hidden login-container">
+  <div class="login-box instruction-box">
+    <h1>Exam Instructions</h1>
+    <ul>
+      <li>You have <b>1 Hour 30 Minutes</b> to complete this test.</li>
+      <li>The test consists of <b>5 questions</b> for demo.</li>
+      <li>Green = Answered. Amber = Flagged for review.</li>
+      <li>Once you click "Start Test", the timer will begin.</li>
+      <li>The test will <b>auto-submit</b> when time runs out.</li>
+    </ul>
+    <p><b>Good luck, <span id="studentNameDisplay"></span>!</b></p>
+    <button id="startTestBtn" class="btn-primary full">I Understand, Start Test</button>
+  </div>
+</div>
+
+<!-- TEST SCREEN -->
+<div id="testScreen" class="hidden">
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="yux.png" alt="YUXIN Logo" class="logo"></div>
+      <div>
+        <h1>YUXIN LEARN</h1>
+        <p id="studentInfo">Candidate</p>
+      </div>
+    </div>
+    <div class="timer">
+      <span>TIME LEFT</span>
+      <h2 id="timer">01:30:00</h2>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside class="sidebar">
+      <div class="nav-item active">Dashboard</div>
+      <div class="nav-item" onclick="location.reload()">Logout</div>
+    </aside>
+
+    <div class="content">
+      <section class="question-card">
+        <div class="q-header">
+          <div>
+            <h2 id="subject">Subject</h2>
+            <p>Question <span id="qNum">1</span> of <span id="qTotal">5</span></p>
+          </div>
+          <button class="btn-secondary" id="flagBtn">🚩 Flag</button>
+        </div>
+        <p id="questionText">Loading question...</p>
+        <div class="options" id="options"></div>
+        <div class="q-footer">
+          <button class="btn-secondary" id="prevBtn">← Previous</button>
+          <button class="btn-secondary" id="clearBtn">Clear Answer</button>
+          <button class="btn-primary" id="nextBtn">Next →</button>
+        </div>
+      </section>
+
+      <aside class="navigator">
+        <h3>QUESTIONS</h3>
+        <div id="grid" class="grid"></div>
+        <button class="btn-danger" id="submitBtn">Submit Test</button>
+      </aside>
+    </div>
+  </div>
+  <footer>© 2026 YUXIN LEARN. All rights reserved.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
