@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "YXL202601-007": "m4trw8bfg1",
     "YXL202601-011": "yx6gp3svq9",
     "YXL202601-006":"j7dn2tcr5",
-    "YXL202601-210":"12345",
+    "YXL202601-220":"12345",
     // Add all students here
   };
 
