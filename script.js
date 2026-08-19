@@ -25,7 +25,7 @@ let timeLeft = 45 * 60; // 60 mins. change as needed
 document.addEventListener("DOMContentLoaded", function () {
 
   const questions = [
-    { subject: "Shopping - Size", q: "你穿小号，但是这件衣服太大。你应该说什么？\nNǐ chuān xiǎo hào, dànshì zhè jiàn yīfu tài dà. Nǐ yīnggāi shuō shénme?", opts: ["有大一点的吗？\nYou da yi dian de ma?", "有小一点的吗？", "多少钱一条？", "怎么付钱？"], ans: 1 },
+    { subject: "Shopping - Size", q: "你穿小号，但是这件衣服太大。你应该说什么？\nNǐ chuān xiǎo hào, dànshì zhè jiàn yīfu tài dà. Nǐ yīnggāi shuō shénme?", opts: ["有大一点的吗？", "有小一点的吗？", "多少钱一条？", "怎么付钱？"], ans: 1 },
     { subject: "Banking - Payment", q: "你买东西以后想用微信付款。你应该说：\nNǐ mǎi dōngxi yǐhòu xiǎng yòng Wēixìn fùkuǎn. Nǐ yīnggāi shuō:", opts: ["我可以扫码吗？", "我可以试试吗？", "我可以换吗？", "我可以坐吗？"], ans: 0 },
     { subject: "Hospital - Problem", q: "你去医院，因为你身体不舒服。你应该说：\nNǐ qù yīyuàn, yīnwèi nǐ shēntǐ bù shūfu. Nǐ yīnggāi shuō:", opts: ["我想买一件衣服。", "我身体不舒服。", "我要一杯水。", "我要去银行。"], ans: 1 },
     { subject: "Transportation - Direction", q: "你想问银行在哪里。你应该说：\nNǐ xiǎng wèn yínháng zài nǎli. Nǐ yīnggāi shuō:", opts: ["银行多少钱？", "银行在哪里？", "银行几点？", "银行是什么？"], ans: 1 },
@@ -66,10 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // LOGIN
   const validUsers = {
-    "YXF001": "china2026",
-    "YXF002": "mandarin88",
-    "YXF003": "beijing25",
-    "YXF013":"12345",
+    "YXL202601-001": "k9pl2vqza7",
+    "YXL202601-007": "m4trw8bfg1",
+    "YXL202601-011": "yx6gp3svq9",
+    "YXL202601-006":"j7dn2tcr5",
+    "YXL202601-210":"12345",
     // Add all students here
   };
 
