@@ -1,3 +1,19 @@
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbze5fwtLrRUjqvFPTnSVEgY-cEPN-Ovu0pnKNaIcS_dq-mieNq-oEUOsLdb3KuVxWXjDg/exec"; 
+
+async function checkIfUsed(regNo) {
+  try {
+    const res = await fetch(`${SCRIPT_URL}?regNo=${regNo}`);
+    const result = await res.text();
+    return result; // "OK" or "ALREADY_USED"
+  } catch(err) {
+    console.log("Error checking reg:", err);
+    alert("Network error. Please try again");
+    return "ERROR";
+  }
+}
+
+// ===== ANTI-CHEAT 1: Block shortcuts =====
+document.addEventListener('contextmenu', e => e.preventDefault());
 // ===== ANTI-CHEAT 1: Block shortcuts =====
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('copy', e => e.preventDefault());
@@ -105,7 +121,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // START TEST
-  document.getElementById('startTestBtn').addEventListener('click', function () {
+document.getElementById('startTestBtn').addEventListener("click", async function () {
+  
+  let regNo = studentReg; // you already have regNo saved in studentReg from login
+  
+  // NEW: Check if this regNo has already submitted
+  let status = await checkIfUsed(regNo);
+  
+  if(status === "ALREADY_USED"){
+    alert("This Reg Number has already been used and submitted");
+    location.reload(); // send them back to login
+    return;
+  } 
+  
+  if(status === "OK"){
+    // Only run this if OK
     examActive = true;
     document.getElementById('instructionScreen').classList.add('hidden');
     document.getElementById('testScreen').classList.remove('hidden');
@@ -115,7 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.documentElement.requestFullscreen) {
       document.documentElement.requestFullscreen();
     }
-  });
+  }
+});
 
   // BUTTONS
   document.getElementById('nextBtn').addEventListener('click', nextQ);
@@ -231,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
       answers: answerString
     };
 
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpkpA0QJTSqbciUguZdrK4LAMXz4QIuZcXjozpXRcZd595PN8c5ptwRrJDwVZ4qn-CAQ/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbze5fwtLrRUjqvFPTnSVEgY-cEPN-Ovu0pnKNaIcS_dq-mieNq-oEUOsLdb3KuVxWXjDg/exec";
 
     fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
