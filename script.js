@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // LOGIN
   const validUsers = {
-    "YXL202601-001": "k9pl2vqza7",
-    "YXL202601-007": "m4trw8bfg1",
+    "YXL202601-001": "123bbk",
+    "YXL202601-007": "m247ty",
     "YXL202601-011": "yx6gp3svq9",
-    "YXL202601-006":"j7dn2tcr5",
-    "YXL202601-220":"12345",
+    "YXL202601-006":"j501qe",
+    "YXL202601-220":"12367",
     // Add all students here
   };
 
